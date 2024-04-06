@@ -1,0 +1,67 @@
+{
+    "name": "@egomaw/eslint-config",
+    "version": "1.0.0",
+    "description": "My own twist on a basic eslint config that conforms to my preferred write style",
+    "main": "index.js",
+    "type": "module",
+    "exports": {
+        ".": {
+            "import": "./index.js",
+            "require": "./index.js"
+        },
+        "./index": {
+            "import": "./index.js",
+            "require": "./index.js"
+        },
+        "./vue": {
+            "import": "./vue.js",
+            "require": "./vue.js"
+        },
+        "./react": {
+            "import": "./react.js",
+            "require": "./react.js"
+        },
+        "./react-javascript": {
+            "import": "./react-js.js",
+            "require": "./react-js.js"
+        },
+        "./typescript": {
+            "import": "./typescript.js",
+            "require": "./typescript.js"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/EgoMaw/eslint-config.git"
+    },
+    "keywords": [
+        "eslint",
+        "eslint-config"
+    ],
+    "author": "Kimon \"EgoMaw\" <egomaw@dedicatedmc.io>",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/EgoMaw/eslint-config/issues"
+    },
+    "homepage": "https://github.com/EgoMaw/eslint-config#readme",
+    "scripts": {
+        "lint": "eslint .",
+        "lint:fix": "eslint --fix"
+    },
+    "dependencies": {
+        "eslint-config-prettier": ">=9.1.0",
+        "eslint-plugin-prettier": ">=5.1.3",
+        "eslint-plugin-vue": ">=9.23.0",
+        "prettier": ">=3.2.5",
+        "typescript-eslint": ">=7.4.0",
+        "vue-eslint-parser": ">=9.4.2",
+        "eslint-plugin-react": ">=7.34.1",
+        "eslint-plugin-react-hooks": ">=4.6.0"
+    },
+    "peerDependencies": {
+        "@eslint/js": ">=8.23.0",
+        "eslint": ">=8.23.0"
+    },
+    "peerDependenciesMeta": {
+    }
+}
