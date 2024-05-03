@@ -2,6 +2,7 @@ import base from './index.js';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config({
+        name: '@egomaw/typescript',
         files: ['**/*.ts'],
         extends: [
             base,
@@ -21,6 +22,15 @@ export default tseslint.config({
         }
     },
     {
+        name: '@egomaw/typescript-js-exclusion',
         files: ['**/*.js'],
-        ...tseslint.configs.disableTypeChecked,
+        extends: [tseslint.configs.disableTypeChecked],
+        rules: {
+            // turn off other type-aware rules
+            'deprecation/deprecation': 'off',
+            '@typescript-eslint/internal/no-poorly-typed-ts-props': 'off',
+
+            // turn off rules that don't apply to JS code
+            '@typescript-eslint/explicit-function-return-type': 'off',
+        },
     });
