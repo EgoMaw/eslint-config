@@ -24,8 +24,6 @@ export default tseslint.config(
             // TypeScript can infer this significantly better than eslint ever can.
             'react/prop-types': 'off',
             'react/display-name': 'off',
-            'reactHooks/rules-of-hooks': 'error',
-            'reactHooks/exhaustive-deps': 'warn',
             // ignore CSS attribute for CSS-In-JS libraries
             'react/no-unknown-property': ['error', { ignore: ['css'] }],
             '@typescript-eslint/no-explicit-any': 'off',

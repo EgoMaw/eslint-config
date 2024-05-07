@@ -1,6 +1,5 @@
 import tseslint from 'typescript-eslint';
 import base from "./index.js";
-import react from "eslint-plugin-react";
 import reactConf from "eslint-plugin-react/configs/recommended.js";
 
 export default tseslint.config(
@@ -25,8 +24,6 @@ export default tseslint.config(
             // TypeScript can infer this significantly better than eslint ever can.
             'react/prop-types': 'off',
             'react/display-name': 'off',
-            'react-hooks/rules-of-hooks': 'error',
-            'react-hooks/exhaustive-deps': 'warn',
             // ignore CSS attribute for CSS-In-JS libraries
             'react/no-unknown-property': ['error', { ignore: ['css'] }],
         }
