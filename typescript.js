@@ -10,9 +10,9 @@ export default tseslint.config(
             ...tseslint.configs.recommendedTypeChecked
         ],
         languageOptions: {
+            parser: tseslint.parser,
             parserOptions: {
                 project: true,
-                tsconfigRootDir: import.meta.dirname,
             },
         },
         rules: {

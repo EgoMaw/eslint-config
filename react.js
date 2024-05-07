@@ -8,6 +8,10 @@ export default tseslint.config(
         name: '@egomaw/react',
         files: ['**/*.{jsx,mjsx,tsx,mtsx}'],
         ...reactConf,
+        plugins: {
+            ...reactConf.plugins,
+            '@typescript-eslint': tseslint.plugin
+        },
         settings: {
             react: {
                 pragma: 'React',
@@ -26,6 +30,7 @@ export default tseslint.config(
             'react/display-name': 'off',
             // ignore CSS attribute for CSS-In-JS libraries
             'react/no-unknown-property': ['error', { ignore: ['css'] }],
+
             '@typescript-eslint/no-explicit-any': 'off',
             '@typescript-eslint/no-non-null-assertion': 'off',
             // This setup is required to avoid a spam of errors when running eslint about React being

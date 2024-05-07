@@ -13,7 +13,6 @@ export default tseslint.config(
             parser: vueParser,
             parserOptions: {
                 project: true,
-                tsconfigRootDir: import.meta.dirname,
                 extraFileExtensions: ['.vue'],
                 parser: tseslint.parser,
                 ecmaVersion: 'latest',
