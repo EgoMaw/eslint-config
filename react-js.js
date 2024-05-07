@@ -4,7 +4,7 @@ import react from "eslint-plugin-react";
 import reactConf from "eslint-plugin-react/configs/recommended.js";
 
 export default tseslint.config(
-    base,
+    ...base,
     {
         name: '@egomaw/react-js',
         files: ['**/*.{jsx,mjsx}'],

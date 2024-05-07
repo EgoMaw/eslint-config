@@ -4,16 +4,11 @@ import tseslint from "typescript-eslint";
 import typescriptBase from "./typescript.js";
 
 export default tseslint.config(
+    ...typescriptBase,
+    ...pluginVue.configs['flat/recommended'],
     {
         name: '@egomaw/vue',
         files: ['**/*.vue'],
-        extends: [
-            ...typescriptBase,
-            ...pluginVue.configs['flat/recommended'],
-        ],
-        plugins: {
-            vue: pluginVue,
-        },
         languageOptions: {
             parser: vueParser,
             parserOptions: {

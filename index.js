@@ -1,10 +1,13 @@
 import js from '@eslint/js';
 import prettier from 'eslint-plugin-prettier/recommended';
-import eslintConfigPrettier from 'eslint-config-prettier';
+import tseslint from "typescript-eslint";
 
-export default {
-    name: '@egomaw/index',
-    ...js.configs.recommended,
-    eslintConfigPrettier,
-    prettier,
-};
+export default tseslint.config(
+    {
+        name: 'eslint-recommended',
+        ...js.configs.recommended
+    },
+    {
+    name: 'prettier',
+    ...prettier,
+});

@@ -1,11 +1,12 @@
 import base from './index.js';
 import tseslint from 'typescript-eslint';
 
-export default tseslint.config({
+export default tseslint.config(
+    ...base,
+    {
         name: '@egomaw/typescript',
         files: ['**/*.ts'],
         extends: [
-            base,
             ...tseslint.configs.recommendedTypeChecked
         ],
         languageOptions: {
