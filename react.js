@@ -1,8 +1,11 @@
 import tseslint from 'typescript-eslint';
 import react from "eslint-plugin-react";
+import base from "./index.js";
 import globals from "globals";
 
 export default tseslint.config(
+    ...base,
+    ...tseslint.configs.recommendedTypeChecked,
     {
         name: '@egomaw/react',
         files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
@@ -16,6 +19,9 @@ export default tseslint.config(
             globals: {
                 ...globals.serviceworker,
                 ...globals.browser,
+            },
+            parserOptions: {
+                project: true,
             },
         },
         settings: {
