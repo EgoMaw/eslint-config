@@ -1,6 +1,6 @@
 {
     "name": "@egomaw/eslint-config",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "My own twist on a basic eslint config that conforms to my preferred write style",
     "main": "index.js",
     "type": "module",
@@ -58,6 +58,7 @@
         "eslint-plugin-prettier": "^5.2.1",
         "eslint-plugin-react": "^7.35.2",
         "eslint-plugin-vue": "^9.28.0",
+        "globals": "^15.9.0",
         "prettier": "^3.3.3",
         "typescript-eslint": "^8.4.0",
         "vue-eslint-parser": "^9.4.3"

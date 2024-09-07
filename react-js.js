@@ -1,13 +1,21 @@
 import tseslint from 'typescript-eslint';
 import base from "./index.js";
-import reactConf from "eslint-plugin-react/configs/recommended.js";
+import react from "eslint-plugin-react";
+import globals from "globals";
 
 export default tseslint.config(
     ...base,
     {
         name: '@egomaw/react-js',
-        files: ['**/*.{jsx,mjsx}'],
-        ...reactConf,
+        files: ['**/*.{js,mjs,cjs,jsx,mjsx}'],
+        ...react.configs.flat.recommended,
+        languageOptions: {
+            ...react.configs.flat.recommended.languageOptions,
+            globals: {
+                ...globals.serviceworker,
+                ...globals.browser,
+            },
+        },
         settings: {
             react: {
                 pragma: 'React',

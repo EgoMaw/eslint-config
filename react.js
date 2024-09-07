@@ -1,16 +1,22 @@
 import tseslint from 'typescript-eslint';
-import typescriptBase from "./typescript.js";
-import reactConf from 'eslint-plugin-react/configs/recommended.js';
+import react from "eslint-plugin-react";
+import globals from "globals";
 
 export default tseslint.config(
-    ...typescriptBase,
     {
         name: '@egomaw/react',
-        files: ['**/*.{jsx,mjsx,tsx,mtsx}'],
-        ...reactConf,
+        files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
+        ...react.configs.flat.recommended,
         plugins: {
-            ...reactConf.plugins,
+            react,
             '@typescript-eslint': tseslint.plugin
+        },
+        languageOptions: {
+            ...react.configs.flat.recommended.languageOptions,
+            globals: {
+                ...globals.serviceworker,
+                ...globals.browser,
+            },
         },
         settings: {
             react: {
@@ -42,5 +48,18 @@ export default tseslint.config(
             '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
             '@typescript-eslint/ban-ts-comment': ['error', { 'ts-expect-error': 'allow-with-description' }],
         }
+    },
+    {
+        name: '@egomaw/typescript-js-exclusion',
+        files: ['**/*.{js,mjs,cjs,jsx,mjsx}'],
+        extends: [tseslint.configs.disableTypeChecked],
+        rules: {
+            // turn off other type-aware rules
+            'deprecation/deprecation': 'off',
+            '@typescript-eslint/internal/no-poorly-typed-ts-props': 'off',
+
+            // turn off rules that don't apply to JS code
+            '@typescript-eslint/explicit-function-return-type': 'off',
+        },
     }
 );
