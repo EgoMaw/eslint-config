@@ -55,5 +55,18 @@ export default tseslint.config(
             '@typescript-eslint/ban-ts-comment': ['error', { 'ts-expect-error': 'allow-with-description' }],
         }
     },
-    
+    {
+        name: '@egomaw/typescript-js-exclusion',
+        files: ['**/*.{js,mjs,cjs,jsx,mjsx}'],
+        ...tseslint.configs.disableTypeChecked,
+        rules: {
+            ...tseslint.configs.disableTypeChecked.rules,
+            // turn off other type-aware rules
+            'deprecation/deprecation': 'off',
+            '@typescript-eslint/internal/no-poorly-typed-ts-props': 'off',
+
+            // turn off rules that don't apply to JS code
+            '@typescript-eslint/explicit-function-return-type': 'off',
+        },
+    }
 );
