@@ -1,6 +1,6 @@
 {
     "name": "@egomaw/eslint-config",
-    "version": "1.0.9",
+    "version": "1.1.0",
     "description": "My own twist on a basic eslint config that conforms to my preferred write style",
     "main": "index.js",
     "type": "module",
@@ -45,8 +45,8 @@
     },
     "homepage": "https://github.com/EgoMaw/eslint-config#readme",
     "scripts": {
-        "lint": "eslint .",
-        "lint:fix": "eslint --fix",
+        "lint": "eslint --config index.js",
+        "lint:fix": "eslint --config index.js --fix",
         "visualize": "pnpm dlx @eslint/config-inspector@latest --config .\\index.js",
         "visualize:ts": "pnpm dlx @eslint/config-inspector@latest --config .\\typescript.js",
         "visualize:vue": "pnpm dlx @eslint/config-inspector@latest --config .\\vue.js",
@@ -56,11 +56,11 @@
     "dependencies": {
         "eslint-config-prettier": ">=9.1.0",
         "eslint-plugin-prettier": "^5.2.1",
-        "eslint-plugin-react": "^7.35.2",
-        "eslint-plugin-vue": "^9.28.0",
-        "globals": "^15.9.0",
+        "eslint-plugin-react": "^7.37.2",
+        "eslint-plugin-vue": "^9.29.1",
+        "globals": "^15.11.0",
         "prettier": "^3.3.3",
-        "typescript-eslint": "^8.4.0",
+        "typescript-eslint": "^8.11.0",
         "vue-eslint-parser": "^9.4.3"
     },
     "peerDependencies": {
