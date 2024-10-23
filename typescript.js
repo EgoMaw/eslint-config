@@ -6,9 +6,7 @@ export default tseslint.config(
     {
         name: '@egomaw/typescript',
         files: ['**/*.ts'],
-        extends: [
-            ...tseslint.configs.recommendedTypeChecked
-        ],
+        ...tseslint.configs.recommendedTypeChecked,
         languageOptions: {
             parser: tseslint.parser,
             parserOptions: {
@@ -16,6 +14,7 @@ export default tseslint.config(
             },
         },
         rules: {
+            ...tseslint.configs.recommendedTypeChecked.rules,
             'no-use-before-define': 'off',
             '@typescript-eslint/no-use-before-define': 'warn',
             '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
@@ -24,9 +23,10 @@ export default tseslint.config(
     },
     {
         name: '@egomaw/typescript-js-exclusion',
-        files: ['**/*.js'],
-        extends: [tseslint.configs.disableTypeChecked],
+        files: ['**/*.{js,mjs,cjs,jsx,mjsx}'],
+        ...tseslint.configs.disableTypeChecked,
         rules: {
+            ...tseslint.configs.disableTypeChecked.rules,
             // turn off other type-aware rules
             'deprecation/deprecation': 'off',
             '@typescript-eslint/internal/no-poorly-typed-ts-props': 'off',
