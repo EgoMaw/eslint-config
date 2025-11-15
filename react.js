@@ -37,7 +37,6 @@ export default defineConfig([
         },
         rules: {
             'eqeqeq': 'error',
-            'prettier/prettier': ['error', {}, { usePrettierrc: true }],
             // TypeScript can infer this significantly better than eslint ever can.
             'react/prop-types': 'off',
             'react/display-name': 'off',

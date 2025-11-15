@@ -27,13 +27,5 @@ export default defineConfig([...typescriptBase, ...pluginVue.configs['flat/recom
         'vue/html-indent': ['warn', 4, { baseIndent: 1 }],
         'vue/script-indent': ['warn', 4, { baseIndent: 1 }],
         'indent': 'off',
-        'prettier/prettier': [
-            'warn',
-            {
-                parser: 'vue',
-                vueIndentScriptAndStyle: true,
-            },
-            { usePrettierrc: true },
-        ],
     },
 }]);

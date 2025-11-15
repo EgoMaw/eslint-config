@@ -45,6 +45,7 @@
     },
     "homepage": "https://github.com/EgoMaw/eslint-config#readme",
     "scripts": {
+        "test": "bun test",
         "lint": "eslint --config index.js",
         "lint:fix": "eslint --config index.js --fix",
         "visualize": "bunx @eslint/config-inspector@latest --config .\\index.js",
