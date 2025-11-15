@@ -1,6 +1,6 @@
 {
     "name": "@egomaw/eslint-config",
-    "version": "1.1.1",
+    "version": "2.0.0",
     "description": "My own twist on a basic eslint config that conforms to my preferred write style",
     "main": "index.js",
     "type": "module",
