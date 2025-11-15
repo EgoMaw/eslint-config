@@ -1,14 +1,18 @@
-import js from "@eslint/js";
-import prettier from "eslint-plugin-prettier/recommended";
-import tseslint from "typescript-eslint";
+import js from '@eslint/js';
+import { defineConfig } from 'eslint/config';
+import stylistic from '@stylistic/eslint-plugin';
 
-export default tseslint.config(
+export default defineConfig([
     {
-        name: "eslint-recommended",
+        name: 'eslint-recommended',
         ...js.configs.recommended,
     },
-    {
-        name: "prettier",
-        ...prettier,
-    },
-);
+    stylistic.configs.customize({
+        indent: 4,
+        quotes: 'single',
+        semi: true,
+        jsx: true,
+        arrowParens: true,
+        blockSpacing: true,
+    }),
+]);

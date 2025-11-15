@@ -1,38 +1,39 @@
-import pluginVue from "eslint-plugin-vue";
-import vueParser from "vue-eslint-parser";
-import tseslint from "typescript-eslint";
-import typescriptBase from "./typescript.js";
+import pluginVue from 'eslint-plugin-vue';
+import vueParser from 'vue-eslint-parser';
+import tseslint from 'typescript-eslint';
+import typescriptBase from './typescript.js';
+import { defineConfig } from 'eslint/config';
 
-export default tseslint.config(...typescriptBase, ...pluginVue.configs["flat/recommended"], {
-    name: "@egomaw/vue",
-    files: ["**/*.vue"],
+export default defineConfig([...typescriptBase, ...pluginVue.configs['flat/recommended'], {
+    name: '@egomaw/vue',
+    files: ['**/*.vue'],
     languageOptions: {
         parser: vueParser,
         parserOptions: {
             project: true,
-            extraFileExtensions: [".vue"],
+            extraFileExtensions: ['.vue'],
             parser: tseslint.parser,
-            ecmaVersion: "latest",
-            sourceType: "module",
+            ecmaVersion: 'latest',
+            sourceType: 'module',
         },
-        ecmaVersion: "latest",
-        sourceType: "module",
+        ecmaVersion: 'latest',
+        sourceType: 'module',
     },
     rules: {
-        "vue/multi-word-component-names": "off",
-        "vue/singleline-html-element-content-newline": "off",
-        "vue/max-attributes-per-line": "off",
-        "vue/html-self-closing": "off",
-        "vue/html-indent": ["warn", 4, { baseIndent: 1 }],
-        "vue/script-indent": ["warn", 4, { baseIndent: 1 }],
-        indent: "off",
-        "prettier/prettier": [
-            "warn",
+        'vue/multi-word-component-names': 'off',
+        'vue/singleline-html-element-content-newline': 'off',
+        'vue/max-attributes-per-line': 'off',
+        'vue/html-self-closing': 'off',
+        'vue/html-indent': ['warn', 4, { baseIndent: 1 }],
+        'vue/script-indent': ['warn', 4, { baseIndent: 1 }],
+        'indent': 'off',
+        'prettier/prettier': [
+            'warn',
             {
-                parser: "vue",
+                parser: 'vue',
                 vueIndentScriptAndStyle: true,
             },
             { usePrettierrc: true },
         ],
     },
-});
+}]);
